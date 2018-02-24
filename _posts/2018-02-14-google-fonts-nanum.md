@@ -5,7 +5,6 @@ category: IT
 tags: ['Fonts', 'Naver', 'Nanum Font']
 image:
   path: /assets/img/2018-02-14-google-fonts-nanum/info.png
-  copyright: Naver
 ---
 
 오늘 [구글 폰트 사이트](https://fonts.google.com/)에 방문하였습니다.

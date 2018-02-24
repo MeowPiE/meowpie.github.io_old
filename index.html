@@ -60,7 +60,7 @@ layout: default
                 {% else %}
                   <img class="materialboxed" src="/assets/img/noimage.png">
                 {% endif %}
-                <span class="card-title logo-font" style="background-color: rgba(0,0,0,.3); cursor: pointer; padding: 8px 24px; width: 100%;" onclick="window.location='{{ url }}{{ post.url }}'">
+                <span class="card-title" style="background-color: rgba(0,0,0,.3); cursor: pointer; padding: 8px 24px; width: 100%;" onclick="window.location='{{ url }}{{ post.url }}'">
                   {{ post.title }}<time datetime="{{ post.date }}" style="font-size: 16px;"> | {{ post.date | date_to_string }}</time>
                 </span>
               </div>

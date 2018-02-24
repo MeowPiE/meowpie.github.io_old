@@ -1,0 +1,79 @@
+---
+layout: default
+---
+
+{% capture url %}{{ site.url | append: "$" | replace: "/$", "" | replace: "$", "" }}{% endcapture %}
+
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <div class="col s12">
+        <article>
+          <div class="card">
+            {% if page.image.path %}
+              <div class="card-image">
+                <img class="materialboxed" src="{{ page.image.path }}">
+                <span class="card-title truncate" style="background-color: rgba(0,0,0,.3); width: 100%;">{{ page.title }}</span>
+              </div>
+            {% endif %}
+            <div class="card-content">
+              {% unless page.image.path %}
+                <span class="card-title truncate">{{ page.title }}</span>
+              {% endunless %}
+              <p style="font-weight: 600; margin-bottom: 10px;"><time datetime="{{ post.date }}">{{ page.date | date: "%F %r" }}</time>{% if site.author.disqus %} | <a href="{{ url }}{{ page.url }}#disqus_thread" data-disqus-identifier="{{ page.id }}">Comment</a>{% endif %}</p>
+              <div id="post-content">
+                {{ content | replace: "<img", "<img class='materialboxed'" }}
+                <p>읽어주셔서 감사합니다! 도움이 되셨다면 널리 알려주세요~ (^o^)</p>
+                <p>앗?! 내용에 수정이 필요한가요? 이메일 또는 댓글로 알려주세요!</p>
+              </div>
+              <div class="center" style="margin-top: 16px;">
+                <table>
+                  <tr>
+                    <td>
+                      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.ko"><img src="{{ url }}/assets/img/license.svg" alt="크리에이티브 커먼즈 라이선스"></a>
+                    </td>
+                    <td>
+                      <span style="font-size: 12px; font-weight: 400; min-height: 31px;">
+                        <span rel="dct:type" xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title">{{ page.title }}</span> 글은 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.ko">크리에이티브 커먼즈 4.0 라이선스</a>가 적용되어 있습니다.<br>
+                        이 라이선스를 벗어나는 사용은 <a xmlns:cc="http://creativecommons.org/ns#" href="mailto:{{ site.author.email }}" rel="cc:morePermissions">{{ site.author.email }}</a>에서 확인하실 수 있습니다.
+                      </span>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="divider" style="margin: 16px 0;"></div>
+              {% for tag in page.tags %}
+                <div class="chip">{{ tag }}</div>
+              {% endfor %}
+            </div>
+          </div>
+        </article>
+        <article>
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">댓글</span>
+              <p>바른말 고운말을 사용해주세요 (>_<)</p>
+              {% include disqus.html %}
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="col s12">
+        {% if page.next %}
+          <div class="left">
+            <a class="btn-floating waves-effect waves-light white" href="{{ url }}{{ page.next.url }}"><i class="material-icons" style="color: rgba(0,0,0,.87);">arrow_back</i></a>
+            <span style="color: rgba(0,0,0,.87); margin-left: 8px;">{{ page.next.title }}</span>
+          </div>
+        {% endif %}
+        {% if page.previous %}
+          <div class="right">
+            <span style="color: rgba(0,0,0,.87); margin-right: 8px;">{{ page.previous.title }}</span>
+            <a class="btn-floating waves-effect waves-light white" href="{{ url }}{{ page.previous.url }}"><i class="material-icons" style="color: rgba(0,0,0,.87);">arrow_forward</i></a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script id="dsq-count-scr" src="//{{ site.author.disqus }}.disqus.com/count.js" async></script>

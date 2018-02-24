@@ -1,0 +1,60 @@
+---
+layout: default
+title: About
+permalink: /about/
+---
+
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <div class="col s12">
+        <article>
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">정보</span>
+              <p>{{ site.about }}</p>
+              <div class="row" style="border-top: 1px solid #dddddd; margin-top: 16px; margin-bottom: 0; padding-top: 16px;">
+                <div class="col s2">
+                  <a href="mailto:{{ site.author.email }}" target="_blank"><i class="fa fa-envelope fa-2x fa-fw" aria-hidden="true"></i></a>
+                </div>
+                <div class="col s2">
+                  <a href="http://github.com/{{ site.author.github }}" target="_blank"><i class="fa fa-github fa-2x fa-fw" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article>
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">이웃 블로그</span>
+              {% for neighbor in site.neighbors %}
+                <div class="col s6">
+                  <a class="waves-effect logo-font blue-text" href="{{ neighbor | split:" - " | last }}" target="_blank" style="font-size: 18px;"><i class="fa fa-user-circle fa-2x"></i> {{ neighbor | split:" - " | first }}</a>
+                </div>
+              {% endfor %}
+              <br><br>
+              <div class="divider" style="margin: 16px 0;"></div>
+              <div class="col s12">
+                <a class="btn-flat waves-effect blue logo-font white-text" href="{{ url }}/notice/2017/12/07/join-neighbor/">냥파이와 이웃맺기!</a>
+              </div>
+              <br><br>
+            </div>
+          </div>
+        </article>
+        <article>
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">블로그 이야기</span>
+              <ul class="collection">
+              {% for milestone in site.data.milestone %}
+                <li class="collection-item"><strong>{{ milestone.date }}</strong><br>{{ milestone.name }}</li>
+              {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>

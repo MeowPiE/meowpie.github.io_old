@@ -7,7 +7,7 @@ image:
   path: /assets/img/2018-02-28-code-blocks/start.png
 ---
 
-**잡담을 보고싶지 않으신분은 [여기를 클릭해서](#Code::Blocks-란?) 넘어가세요!**
+**잡담을 보고싶지 않으신분은 [여기를 클릭해서](#codeblocks-란) 넘어가세요!**
 
 # 잡담
 

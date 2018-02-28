@@ -20,7 +20,7 @@ layout: default
               {% unless page.image.path %}
                 <span class="card-title truncate">{{ page.title }}</span>
               {% endunless %}
-              <p style="font-weight: 600; margin-bottom: 10px;"><a class="blue-text">{{ page.category }}</a><time datetime="{{ post.date }}">{{ page.date | date: "%F %r" }}</time>{% if site.author.disqus %} | <a href="{{ url }}{{ page.url }}#disqus_thread" data-disqus-identifier="{{ page.id }}">Comment</a>{% endif %}</p>
+              <p style="font-weight: 600; margin-bottom: 10px;"><a class="blue-text">{{ page.category }}</a> | <time datetime="{{ post.date }}">{{ page.date | date: "%F %r" }}</time> | <a href="{{ url }}{{ page.url }}#disqus_thread" data-disqus-identifier="{{ page.id }}">Comments</a></p>
               <div id="post-content">
                 {{ content | replace: "<img", "<img class='materialboxed'" }}
                 <p>읽어주셔서 감사합니다! 도움이 되셨다면 널리 알려주세요~ (^o^)</p>

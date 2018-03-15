@@ -17,9 +17,9 @@
       <h5 class="white-text">이웃 블로그</h5>
       <ul>
         {% for neighbor in site.neighbors limit:3 %}
-          <li><a class="grey-text text-lighten-3" href="{{ neighbor | split:" - " | last }}">{{ neighbor | split:" - " | first }}</a></li>
+          <li><a class="grey-text text-lighten-3" href="{{ neighbor.link }}">{{ neighbor.title }}</a></li>
         {% endfor %}
-        <li><a class="grey-text text-lighten-3" href="{{ url }}/about/#neighbors">이웃 모두보기</a></li>
+        <li><a class="grey-text text-lighten-3" href="{{ url }}/about/">이웃 모두보기</a></li>
       </ul>
     </div>
   </div>
@@ -29,7 +29,7 @@
   <div class="container">
     © {{ site.time | date: "%Y" }} {{ site.author.name }}. All rights reserved.
     <div class="right">
-      <span class="white-text" style="font-weight: 400; margin-right: 5px;">View on</span><a class="fa fa-github fa-lg white-text" href="https://github.com/MeowPiE/meowpie.github.io"></a>
+      <span class="white-text" style="font-weight: 400; margin-right: 5px;">View on</span><a class="fa fa-github fa-lg white-text" href="https://github.com/meowpie/meowpie.github.io"></a>
     </div>
   </div>
 </div>

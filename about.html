@@ -30,7 +30,7 @@ permalink: /about/
               <span class="card-title">이웃 블로그</span>
               {% for neighbor in site.neighbors %}
                 <div class="col s6">
-                  <a class="waves-effect logo-font blue-text" href="{{ neighbor | split:" - " | last }}" target="_blank" style="font-size: 18px;"><i class="fa fa-user-circle fa-2x"></i> {{ neighbor | split:" - " | first }}</a>
+                  <a class="waves-effect logo-font blue-text" href="{{ neighbor.url }}" target="_blank" style="font-size: 18px;"><i class="fa fa-user-circle fa-2x"></i> {{ neighbor.title }}</a>
                 </div>
               {% endfor %}
               <br><br>

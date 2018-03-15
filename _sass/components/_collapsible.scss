@@ -3,6 +3,7 @@
   border-right: 1px solid $collapsible-border-color;
   border-left: 1px solid $collapsible-border-color;
   margin: $element-top-margin 0 $element-bottom-margin 0;
+  @extend .z-depth-1;
 }
 
 .collapsible-header {
@@ -46,7 +47,7 @@
     border: none;
     line-height: inherit;
     height: inherit;
-    padding: 0 $sidenav-padding * 2;
+    padding: 0 $sidenav-padding;
 
     &:hover { background-color: rgba(0,0,0,.05); }
     i { line-height: inherit; }
@@ -57,9 +58,8 @@
     background-color: $collapsible-header-color;
 
     li a {
-      font-weight: 400;
-      padding: 0 (7.5px + $sidenav-padding * 2)
-               0 (15px + $sidenav-padding * 2);
+      padding: 0 (7.5px + $sidenav-padding)
+               0 (15px + $sidenav-padding);
     }
   }
 

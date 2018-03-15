@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 
-{% capture url %}{{ site.url | append: "$" | replace: "/$", "" | replace: "$", "" }}{% endcapture %}
-
 <html lang="ko">
-<head>
-  {% include meta.html %}
-  {% include css.html %}
-</head>
+  <head>
+    {% include meta.html %}
+    {% include_cached css.html %}
+  </head>
 
-<body>
-  <header>
-    {% include nav.html %}
-  </header>
-  <main>
-    <section>
-      {{ content }}
-    </section>
-  </main>
-  <footer class="page-footer">
-    {% include footer.html %}
-  </footer>
-  {% include js.html %}
-</body>
+  <body>
+    <header>
+      {% include_cached nav.html %}
+    </header>
+    <main>
+      <section>
+        {{ content }}
+      </section>
+    </main>
+    <footer class="page-footer">
+      {% include_cached footer.html %}
+    </footer>
+    {% include js.html %}
+  </body>
 </html>
